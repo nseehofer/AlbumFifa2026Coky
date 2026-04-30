@@ -47,6 +47,7 @@
         // --- 2. ESTADO DE LA APLICACIÓN ---
         
         let paginaActualIndex = 0; // Índice en el array 'paginas' (0 a 51)
+        let edicionHabilitada = true; // Controla si se pueden marcar las figuritas
         
         // Recuperar figuritas guardadas de localStorage o crear un Set nuevo
         const guardadasJSON = localStorage.getItem('figuritasFifa2026');
@@ -63,6 +64,7 @@
         const buscadorContainer = document.getElementById('buscador-container');
         const btnPrev = document.getElementById('btn-prev');
         const btnNext = document.getElementById('btn-next');
+        const btnBloqueo = document.getElementById('btn-bloqueo');
 
 
         // --- 4. FUNCIONES DE RENDERIZADO Y NAVEGACIÓN ---
@@ -213,6 +215,9 @@
         // --- 5. LÓGICA DE INTERACCIÓN Y GUARDADO ---
 
         function toggleFigurita(numero, elementoDOM) {
+            // Si la edición está bloqueada, impedimos la acción
+            if (!edicionHabilitada) return;
+
             // Alternar clase visual
             elementoDOM.classList.toggle('obtenida');
 
@@ -225,6 +230,20 @@
 
             // Guardar en LocalStorage
             guardarProgreso();
+        }
+
+        function toggleBloqueoEdicion() {
+            edicionHabilitada = !edicionHabilitada;
+            
+            if (edicionHabilitada) {
+                btnBloqueo.innerHTML = 'Completando';
+                btnBloqueo.classList.replace('btn-secondary', 'btn-warning');
+                contenedorFiguritas.classList.remove('edicion-bloqueada');
+            } else {
+                btnBloqueo.innerHTML = 'Bloqueado';
+                btnBloqueo.classList.replace('btn-warning', 'btn-secondary');
+                contenedorFiguritas.classList.add('edicion-bloqueada');
+            }
         }
 
         function guardarProgreso() {

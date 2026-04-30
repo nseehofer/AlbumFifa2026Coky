@@ -66,6 +66,17 @@
             color: #90a4ae;
         }
 
+        /* Efectos cuando la edición está bloqueada */
+        .figuritas-grid.edicion-bloqueada .figurita {
+            cursor: default;
+        }
+        
+        .figuritas-grid.edicion-bloqueada .figurita:not(.obtenida):hover {
+            background-color: transparent;
+            border-color: #b0bec5;
+            color: #b0bec5;
+        }
+
         /* Estilo de la figurita cuando se hace click (obtenida) */
         .figurita.obtenida {
             background-color: #ffc107; /* Dorado/Amarillo clásico de figuritas */
