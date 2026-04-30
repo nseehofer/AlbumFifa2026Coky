@@ -27,7 +27,7 @@
             } else if (i >= 2 && i <= 49) {
                 // i - 2 porque la página 2 corresponde al índice 0 del array paises
                 titulo = paises[i - 2]; 
-                cantidad = 12; // 12 figuritas por país (del 0 al 11)
+                cantidad = 20; // 12 figuritas por país (del 0 al 11)
             } else if (i === 50) {
                 titulo = "Emoción";
                 cantidad = 14;
