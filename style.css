@@ -107,4 +107,41 @@
         .sugerencias-dropdown .dropdown-item {
             cursor: pointer;
         }
+
+/* --- MEDIA QUERIES PARA RESPONSIVE (Móviles) --- */
+@media (max-width: 576px) {
+    .controls-container {
+        padding: 12px;
+        top: 5px;
+        margin-bottom: 15px;
+    }
+
+    .navbar-brand {
+        font-size: 1.25rem !important;
+    }
+
+    .page-title-container h2 {
+        font-size: 1.5rem;
+    }
+
+    .page-title-container p {
+        font-size: 0.85rem;
+    }
+
+    /* Grilla más compacta en pantallas chicas */
+    .figuritas-grid {
+        grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+        gap: 10px;
+    }
+
+    /* Achicamos la tipografía y bordes de las figuritas */
+    .figurita {
+        font-size: 1.5rem;
+        border-width: 2px;
+    }
+    
+    .figurita.obtenida {
+        border-width: 2px;
+    }
+}
   
