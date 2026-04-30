@@ -1,0 +1,99 @@
+
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding-bottom: 40px;
+        }
+
+        .navbar {
+            background-color: #003366; /* Azul oscuro FIFA */
+        }
+
+        .controls-container {
+            background-color: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+            position: sticky;
+            top: 10px;
+            z-index: 1000;
+        }
+
+        /* Grilla de figuritas */
+        .figuritas-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            gap: 15px;
+            justify-items: center;
+            transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+        }
+
+        /* Animación para el cambio de página */
+        .fade-out {
+            opacity: 0;
+            transform: translateX(-20px);
+        }
+        .fade-in {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* Estilo base de la figurita */
+        .figurita {
+            width: 100%;
+            max-width: 150px;
+            aspect-ratio: 2 / 3;
+            border: 3px dashed #b0bec5;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: bold;
+            color: #b0bec5;
+            background-color: transparent;
+            cursor: pointer;
+            user-select: none;
+            transition: all 0.2s ease;
+            box-sizing: border-box;
+        }
+
+        /* Efecto hover si no está obtenida */
+        .figurita:not(.obtenida):hover {
+            background-color: #eceff1;
+            border-color: #90a4ae;
+            color: #90a4ae;
+        }
+
+        /* Estilo de la figurita cuando se hace click (obtenida) */
+        .figurita.obtenida {
+            background-color: #ffc107; /* Dorado/Amarillo clásico de figuritas */
+            border: 3px solid #ff9800;
+            color: #d84315;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            transform: scale(1.05);
+        }
+
+        .page-title-container {
+            text-align: center;
+            margin: 20px 0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #003366;
+        }
+        
+        /* Dropdown Predictivo */
+        .sugerencias-dropdown {
+            max-height: 300px;
+            overflow-y: auto;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            margin-top: 0.25rem;
+            z-index: 1050;
+        }
+        .sugerencias-dropdown .dropdown-item {
+            cursor: pointer;
+        }
+  
